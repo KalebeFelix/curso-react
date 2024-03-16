@@ -1,10 +1,18 @@
-import { BackgroundImage } from "../style/LoginScreen.styles";
+import FormLogin from "../components/ContainerLogin";
+import * as S from "../style/LoginScreen.styles";
 
 const LoginScreen = () => {
   return (
-    <div>
-      <BackgroundImage src="public\bg.png" />
-    </div>
+    <S.Main>
+      <S.Container>
+        <S.Aside>
+          <FormLogin />
+        </S.Aside>
+        <S.AsideImg>
+          <S.ImgDrip src="public\astronaut.svg" />
+        </S.AsideImg>
+      </S.Container>
+    </S.Main>
   );
 };
 
