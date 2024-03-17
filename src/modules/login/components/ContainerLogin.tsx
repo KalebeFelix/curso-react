@@ -47,8 +47,7 @@ const FormLogin = () => {
 };
 
 const ContainerLogin = styled.div`
-  width: 22.5rem;
-  height: 33rem;
+  width: 100%;
   transform: scale(0.9);
 `;
 

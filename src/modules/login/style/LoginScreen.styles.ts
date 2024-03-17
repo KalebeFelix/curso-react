@@ -11,12 +11,16 @@ export const Main = styled.div`
 export const Container = styled.div`
   width: 80vw;
   height: 90vh;
+  min-width: 22rem;
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  @media screen and (max-width: 1050px) {
+    justify-content: center;
+  }
 `;
 
 export const Aside = styled.aside`
@@ -32,6 +36,9 @@ export const AsideImg = styled.aside`
   align-items: center;
   width: 50rem;
   border-radius: 2rem;
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
 `;
 
 export const ImgDrip = styled.img`
