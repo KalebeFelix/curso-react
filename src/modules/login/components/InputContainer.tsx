@@ -7,6 +7,8 @@ type InputContainerProps = {
   placeholder: string;
   type: "text" | "password";
   margin: string;
+  value: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function InputContainer({
@@ -14,6 +16,8 @@ export default function InputContainer({
   placeholder,
   type,
   margin,
+  value,
+  onChange,
 }: InputContainerProps) {
   if (type === "password") {
     const [visible, setVisible] = useState(false);
@@ -24,6 +28,8 @@ export default function InputContainer({
           <InputPassword
             type={visible ? "text" : "password"}
             placeholder={placeholder}
+            value={value}
+            onChange={onChange}
           />
           <Icon onClick={() => setVisible(!visible)}>
             {visible ? <MdVisibility /> : <MdVisibilityOff />}
@@ -35,7 +41,12 @@ export default function InputContainer({
     return (
       <ContainerInput margin={margin}>
         <Label>{label}</Label>
-        <Input type={type} placeholder={placeholder} />
+        <Input
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
       </ContainerInput>
     );
   }

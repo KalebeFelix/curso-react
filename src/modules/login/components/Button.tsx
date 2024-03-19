@@ -3,18 +3,29 @@ import styled from "styled-components";
 
 type ButtonContainerProps = {
   type: "signIn" | "signGoogle";
+  onClick?: () => void;
 };
 
-export default function Button({ type }: ButtonContainerProps) {
+export default function Button({ type, onClick }: ButtonContainerProps) {
   if (type === "signIn") {
     return (
-      <ButtonContainer border="none" bg="#5429FF" color="white">
+      <ButtonContainer
+        border="none"
+        bg="#5429FF"
+        color="white"
+        onClick={onClick}
+      >
         Sing in
       </ButtonContainer>
     );
   } else {
     return (
-      <ButtonContainer border="1px solid #D0D5DD" bg="white" color="#344054">
+      <ButtonContainer
+        border="1px solid #D0D5DD"
+        bg="white"
+        color="#344054"
+        onClick={onClick}
+      >
         <FcGoogle /> Sing in with Google
       </ButtonContainer>
     );

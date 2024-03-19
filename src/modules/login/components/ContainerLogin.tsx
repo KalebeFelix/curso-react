@@ -1,9 +1,13 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 import Button from "../components/Button";
 import InputContainer from "../components/InputContainer";
 
 const FormLogin = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <ContainerLogin>
       <LoginText>Login</LoginText>
@@ -16,12 +20,16 @@ const FormLogin = () => {
         placeholder="Email"
         type="text"
         margin="1.5rem 0"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
       <InputContainer
         label="Password"
         placeholder="Password"
         type="password"
         margin="2rem 0"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
       <RememberContainer>
         <Remember>
@@ -35,7 +43,10 @@ const FormLogin = () => {
       </RememberContainer>
 
       <ContainerButton>
-        <Button type="signIn" />
+        <Button
+          type="signIn"
+          onClick={() => alert(`Username ${username}, password ${password}`)}
+        />
         <Button type="signGoogle" />
       </ContainerButton>
 
